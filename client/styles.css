@@ -55,7 +55,7 @@ body {
 
 .chat {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
 
   display: flex;
@@ -116,7 +116,7 @@ body {
 
 form {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
   background: #40414F;
@@ -155,11 +155,10 @@ button {
   gap: 1rem;
   color: #fff;
   font-size: 15px;
-  margin-right: 1rem;
-  padding: .5rem 1rem;
+  padding: .5rem .5rem;
   position: absolute;
   bottom: 7rem;
-  left: 70%;
+  left: 67%;
   visibility: hidden;
   z-index: 5;
 
@@ -180,11 +179,11 @@ form img {
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateX(200%);
+    /* transform: translateX(200%); */
   }
 
   to {
     opacity: 1;
-    transform: translatex(0);
+    /* transform: translateX(0); */
   }
 }

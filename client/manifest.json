@@ -2,7 +2,7 @@
     "name": "Codex-Chat",
     "short_name": "CodexAI",
     "description": "An instant chat about programming with the AI called Codex.",
-    "start_url": "https://code-x-ai-chat.vercel.app/",
+    "start_url": "/",
     "lang": "es-US",
     "theme_color": "#5436DA",
     "display": "standalone",
