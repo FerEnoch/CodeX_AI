@@ -1,5 +1,5 @@
-import bot from './assets/bot.svg';
-import user from './assets/user.svg';
+import bot from './assets/bot.png';
+import user from './assets/user.png';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
@@ -13,7 +13,7 @@ function loader(element) {
     if (element.textContent === '....') {
       element.textContent = '';
     }
-    }, 300)
+  }, 300)
 }
 
 function typeText(element, text) {
@@ -56,7 +56,7 @@ function chatStripe(isAi, value, uniqueId) {
   )
 }
 
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
   const data = new FormData(form);
 
@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
-  const response = await fetch('https://codex-5zsc.onrender.com', {
+  fetch('https://codex-5zsc.onrender.com', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
@@ -81,23 +81,25 @@ const handleSubmit = async (e) => {
     body: JSON.stringify({
       prompt: data.get("prompt")
     })
-  });
-
-  clearInterval(loadInterval); 
-  messageDiv.innerHTML = '';
-
-  if (response.ok) {
-    const data = await response.json();
-    const parseData = data.bot.trim();
-
-    typeText(messageDiv, parseData);
-  } else {
-    const err = await response.text();
-
-    messageDiv.innerHTML = "Something went wrong...";
-    alert(err);
-  }
-
+  })
+    .then(async response => {
+      if (response.ok) {
+        const data = await response.json();
+        const parseData = data.bot.trim();
+        typeText(messageDiv, parseData);
+        clearInterval(loadInterval);
+        messageDiv.innerHTML = '';
+      } else {
+        const err = await response.text();
+        messageDiv.innerHTML = "Something went wrong...";
+        alert(err);
+      }
+    })
+    .catch(err => {
+      console.log("There's a problem with the net:", err);
+      chatContainer.innerHTML = chatStripe(true, "Sorry... I can't answer cause we're disconnected", uniqueId);
+      alert("You need internet connection to chat with Codex");
+    });
 }
 
 form.addEventListener('submit', handleSubmit);
@@ -106,3 +108,13 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 });
+
+if ('serviceWorker' in navigator) {
+  // console.log('Service worker supported!');
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('./service-worker.js')
+      .then(reristrationObject => console.log('[Service Worker] Successful registration'))
+      .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
+  });
+}
