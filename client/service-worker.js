@@ -1,19 +1,19 @@
 const CACHE_VERSION = 2;
 const CACHE_NAME = 'static-cache-v' + CACHE_VERSION;
 const STATIC_CACHE_FILES = [
-    "./index.html",
+    "/index.html",
     // "./styles.css",
-    "./script.js",
-    "./install.js",
-    "./assets/bot.png",
-    "./assets/send.png",
-    "./assets/user.png",
-    "./assets/icons/favicon128x128.png",
-    "./assets/icons/favicon180x180.png",
-    "./assets/icons/favicon192x192.png",
-    "./assets/icons/favicon256x256.png",
-    "./assets/icons/favicon512x512.png",
-    "./assets/icons/favicon640x640.png",
+    "/script.js",
+    "/install.js",
+    "/assets/bot.png",
+    "/assets/send.png",
+    "/assets/user.png",
+    "/assets/icons/favicon128x128.png",
+    "/assets/icons/favicon180x180.png",
+    "/assets/icons/favicon192x192.png",
+    "/assets/icons/favicon256x256.png",
+    "/assets/icons/favicon512x512.png",
+    "/assets/icons/favicon640x640.png",
 ];
 
 self.addEventListener('install', (evt) => {
