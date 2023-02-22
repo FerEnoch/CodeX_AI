@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
-import httpToHttps from 'express-http-to-https';
+// import httpToHttps from 'express-http-to-https';
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ const openai = new OpenAIApi(configuration);
 
 const app = express();
 
-app.use(httpToHttps.redirectToHTTPS([/localhost:(\d{4})/], [], 301));
+// app.use(httpToHttps.redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(cors());
 app.use(express.json());
 
