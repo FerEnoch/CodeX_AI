@@ -117,4 +117,6 @@ if ('serviceWorker' in navigator) {
       .then(reristrationObject => console.log('[Service Worker] Successful registration'))
       .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
   });
+} else {
+  console.error('Service workers are not supported.');
 }
