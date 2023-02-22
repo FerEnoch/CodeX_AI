@@ -15,7 +15,7 @@ const openai = new OpenAIApi(configuration);
 
 const app = express();
 
-app.use(httpToHttps.redirectToHTTPS([/*/localhost:(\d{4})/*/], [], 301));
+app.use(httpToHttps.redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(cors());
 app.use(express.json());
 
