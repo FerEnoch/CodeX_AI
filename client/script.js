@@ -108,15 +108,3 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 });
-
-if ('serviceWorker' in navigator) {
-  // console.log('Service worker supported!');
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('./service-worker.js')
-      .then(reristrationObject => console.log('[Service Worker] Successful registration'))
-      .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
-  });
-} else {
-  console.error('Service workers are not supported.');
-}
