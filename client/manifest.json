@@ -2,8 +2,8 @@
     "name": "Codex-Chat",
     "short_name": "CodexAI",
     "description": "An instant chat about programming with the AI called Codex.",
-    "start_url": "/",
-    "scope": "/",
+    "start_url": "./",
+    "scope": "./",
     "lang": "es-US",
     "theme_color": "#5436DA",
     "display": "standalone",
@@ -11,32 +11,32 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "/icon/favicon128x128.png",
+            "src": "./icon/favicon128x128.png",
             "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "/icon/favicon180x180.png",
+            "src": "./icon/favicon180x180.png",
             "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "/icon/favicon192x192.png",
+            "src": "./icon/favicon192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icon/favicon256x256.png",
+            "src": "./icon/favicon256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/icon/favicon512x512.png",
+            "src": "./icon/favicon512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "/icon/favicon640x640.png",
+            "src": "./icon/favicon640x640.png",
             "sizes": "640x640",
             "type": "image/png",
             "purpose": "maskable"
