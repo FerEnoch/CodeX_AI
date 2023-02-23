@@ -15,7 +15,13 @@ const openai = new OpenAIApi(configuration);
 
 const app = express();
 
-app.use(httpToHttps.redirectToHTTPS([/localhost:(\d{4})/], [], 301));
+app.use(httpToHttps.redirectToHTTPS([/localhost:[\d{4}]/], [], 301));
+// app.use((req, res, next) => {
+//     if (req.protocol === 'http') {
+//         return res.redirect(301, `https://${req.headers.host}${req.url}`);
+//     }
+//     next();
+// });
 app.use(cors());
 app.use(express.json());
 
@@ -49,4 +55,4 @@ app.post('/', async (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log('Server is running on port http://localhost:5000'));
+app.listen(3001, () => console.log('Server is running on port http://localhost:3001'));

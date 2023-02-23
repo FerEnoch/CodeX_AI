@@ -73,7 +73,8 @@ const handleSubmit = (e) => {
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
-  fetch('https://codex-5zsc.onrender.com', {
+  // fetch('https://codex-5zsc.onrender.com', {
+  fetch('http://localhost:3001', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
@@ -108,13 +109,3 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 });
-
-if ('serviceWorker' in navigator) {
-  // console.log('Service worker supported!');
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('./service-worker.js')
-      .then(reristrationObject => console.log('[Service Worker] Successful registration'))
-      .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
-  });
-}
