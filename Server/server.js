@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
-import httpToHttps from 'express-http-to-https';
+// import httpToHttps from 'express-http-to-https';
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ const openai = new OpenAIApi(configuration);
 
 const app = express();
 
-app.use(httpToHttps.redirectToHTTPS([/localhost:[\d{4}]/], [], 301));
+// app.use(httpToHttps.redirectToHTTPS([/localhost:[\d{4}]/], [], 301));
 // app.use((req, res, next) => {
 //     if (req.protocol === 'http') {
 //         return res.redirect(301, `https://${req.headers.host}${req.url}`);
@@ -55,4 +55,5 @@ app.post('/', async (req, res) => {
     }
 });
 
-app.listen(3001, () => console.log('Server is running on port http://localhost:3001'));
+const port = process.env.PORT || 3001;
+app.listen(port, () => console.log('Server is running on port http://localhost:' + port));
