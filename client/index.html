@@ -51,81 +51,16 @@
       // console.log('Service worker supported!');
       window.addEventListener('load', () => {
         navigator.serviceWorker
-        .register('./serviceWorker.js')
-        .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
-        .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
+          .register('./serviceWorker.js')
+          .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
+          .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
       });
     } else {
       console.error('Service workers are not supported.');
     }
-    </script>
-    <script type="module" src="./script.js"></script>
-    <script src="./install.js"></script>
+  </script>
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./install.js"></script>
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="manifest" href="./manifest.json">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="CodexAI">
-  <meta name="apple-mobile-web-app-title" content="CodexAI">
-  <meta name="theme-color" content="#5436DA">
-  <meta name="msapplication-navbutton-color" content="#5436DA">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-starturl" content="/.">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" sizes="128x128" href="./icon/favicon128x128.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="./icon/favicon128x128.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="./icon/favicon180x180.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./icon/favicon180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="./icon/favicon192x192.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="./icon/favicon192x192.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="./icon/favicon256x256.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="./icon/favicon256x256.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="./icon/favicon512x512.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="./icon/favicon512x512.png">
-  <link rel="icon" type="image/png" sizes="640x640" href="./icon/favicon640x640.png">
-  <link rel="apple-touch-icon" type="image/png" sizes="640x640" href="./icon/favicon640x640.png">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Your Coding AI chatbot</title>
-</head>
-
-<body>
-  <div id="app">
-    <div id="chat_container">
-      <!-- chat content -->
-    </div>
-    <button id="install_button">
-      Instalate la app!
-      <img src="./icon/favicon128x128.png" />
-    </button>
-    <form>
-      <textarea name="prompt" cols="1" rows="1" placeholder="Ask Codex..."></textarea>
-      <button type="submit">
-        <img src="./assets/send.png" />
-      </button>
-    </form>
-  </div>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      // console.log('Service worker supported!');
-      window.addEventListener('load', () => {
-        navigator.serviceWorker
-        .register('./service-worker.js')
-        .then(reristrationObject => console.log('[Service Worker] Successful registration'))
-        .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
-      });
-    } else {
-      console.error('Service workers are not supported.');
-    }
-    </script>
-    <script type="module" src="./script.js"></script>
-    <script src="./install.js"></script>
-</body>
 </html>
