@@ -51,7 +51,7 @@
       // console.log('Service worker supported!');
       window.addEventListener('load', () => {
         navigator.serviceWorker
-          .register('./serviceWorker.js')
+          .register('./serviceWorker.js', { type: "module", scope: "./" })
           .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
           .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
       });

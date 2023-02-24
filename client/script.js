@@ -73,8 +73,8 @@ const handleSubmit = (e) => {
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
-  // fetch('https://codex-5zsc.onrender.com', {
-  fetch('http://localhost:3001', {
+  // fetch('http://localhost:3001', {
+  fetch('https://codex-5zsc.onrender.com/', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'

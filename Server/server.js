@@ -15,13 +15,9 @@ const openai = new OpenAIApi(configuration);
 
 const app = express();
 
+// No es necesaria la redirección porque el hosting ya lo hace
 // app.use(httpToHttps.redirectToHTTPS([/localhost:[\d{4}]/], [], 301));
-// app.use((req, res, next) => {
-//     if (req.protocol === 'http') {
-//         return res.redirect(301, `https://${req.headers.host}${req.url}`);
-//     }
-//     next();
-// });
+
 app.use(cors());
 app.use(express.json());
 
