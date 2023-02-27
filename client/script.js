@@ -111,14 +111,21 @@ form.addEventListener('keyup', (e) => {
   }
 });
 
-// if ('serviceWorker' in navigator) {
-//   // console.log('Service worker supported!');
-//   window.addEventListener('load', () => {
-//     navigator.serviceWorker
-//       .register(worker, { type: "module", scope: "./" })
-//       .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
-//       .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
-//   });
-// } else {
-//   console.error('Service workers are not supported.');
-// }
+/**
+ *  La herramienta vite-plugin-pwa crea y registra automáticamente un service-worker,
+ *  por lo que el código que sigue es innecesario, y sólo lo dejo aquí a los fines de que
+ *  quede registro de cómo se haría en vanilla javascript.
+ * 
+ * 
+ *      if ('serviceWorker' in navigator) {
+ *        // console.log('Service worker supported!');
+ *        window.addEventListener('load', () => {
+ *          navigator.serviceWorker
+ *            .register(worker, { type: "module", scope: "./" })
+ *            .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
+ *            .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
+ *        });
+ *      } else {
+ *        console.error('Service workers are not supported.');
+ *      }
+ */

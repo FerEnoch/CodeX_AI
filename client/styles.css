@@ -147,7 +147,7 @@ button {
 }
 
 #install_button {
-  border: 1.5px solid #aaa;
+  border: 1px solid #aaa;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -155,10 +155,11 @@ button {
   gap: 1rem;
   color: #fff;
   font-size: 15px;
+  max-width: 6rem;
   padding: .5rem;
   position: absolute;
   bottom: 7rem;
-  left: 75%;
+  left: 65%;
   visibility: hidden;
   z-index: 5;
 
@@ -168,7 +169,7 @@ button {
 }
 
 #install_button img {
-  max-width: 3rem;
+  max-width: 2.5rem;
 }
 
 form img {
@@ -179,11 +180,11 @@ form img {
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(60%);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 }

@@ -1,7 +1,5 @@
-
 let deferredPrompt = null;
 const installButton = document.querySelector('#install_button');
-installButton.setAttribute('style', 'visibility: visible');
 
 window.addEventListener('beforeinstallprompt', (evt) => {
     evt.preventDefault();
