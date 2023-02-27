@@ -8,12 +8,12 @@ const STATIC_CACHE_FILES = [
     "./assets/bot.png",
     "./assets/send.png",
     "./assets/user.png",
-    "./icon/favicon128x128.png",
-    "./icon/favicon180x180.png",
-    "./icon/favicon192x192.png",
-    "./icon/favicon256x256.png",
-    "./icon/favicon512x512.png",
-    "./icon/favicon640x640.png",
+    "./assets/icons/favicon128x128.png",
+    "./assets/icons/favicon180x180.png",
+    "./assets/icons/favicon192x192.png",
+    "./assets/icons/favicon256x256.png",
+    "./assets/icons/favicon512x512.png",
+    "./assets/icons/favicon640x640.png",
 ];
 
 self.addEventListener('install', (evt) => {

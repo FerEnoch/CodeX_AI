@@ -12,6 +12,6 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "vite-plugin-pwa": "^0.14.4"
+    "vite-plugin-pwa": "0.14.4"
   }
 }

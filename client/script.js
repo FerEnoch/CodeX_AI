@@ -1,5 +1,6 @@
-import bot from './assets/bot.png';
-import user from './assets/user.png';
+import bot from '/assets/bot.png';
+import user from '/assets/user.png';
+// import worker from '/service-worker.js?url';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
@@ -97,9 +98,9 @@ const handleSubmit = (e) => {
       }
     })
     .catch(err => {
-      console.log("There's a problem with the net:", err);
+      console.log("There's a problem with the server or the net:", err);
       chatContainer.innerHTML = chatStripe(true, "Sorry... I can't answer cause we're disconnected", uniqueId);
-      alert("You need internet connection to chat with Codex");
+      alert("You need internet connection to chat with Codex... or maybe there's a problem with the server :_(");
     });
 }
 
@@ -109,3 +110,15 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 });
+
+// if ('serviceWorker' in navigator) {
+//   // console.log('Service worker supported!');
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker
+//       .register(worker, { type: "module", scope: "./" })
+//       .then(reristrationObject => console.log('[Service Worker] Successful registration', reristrationObject.scope))
+//       .catch(err => console.log("[Service Worker] Registration failed. Error: ", err));
+//   });
+// } else {
+//   console.error('Service workers are not supported.');
+// }
