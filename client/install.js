@@ -12,7 +12,7 @@ const installApp = (evt) => {
     installButton.setAttribute('style', 'visibility: hidden');
     deferredPrompt.prompt();
     deferredPrompt.userChoice
-        .them(choiceResult => {
+        .then(choiceResult => {
             if (choiceResult.outcome === "accepted") {
                 console.log('PWA septup accepted');
             } else if (choiceResult.outcome === 'dismissed') {
