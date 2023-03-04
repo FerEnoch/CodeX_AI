@@ -15,7 +15,7 @@ const installApp = (evt) => {
         .them(choiceResult => {
             if (choiceResult.outcome === "accepted") {
                 console.log('PWA septup accepted');
-            } else if (outcome === 'dismissed') {
+            } else if (choiceResult.outcome === 'dismissed') {
                 console.log('PWA setup rejected');
             }
             deferredPrompt = null;
